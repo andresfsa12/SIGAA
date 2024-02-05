@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author Andres
  */
-public class docente {
+public class coordinador_academico {
             public static void main(String[] args) {
         String usuario = "root";
         String password = "";
@@ -30,21 +30,21 @@ public class docente {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
         } catch (ClassNotFoundException ex) {
-        Logger.getLogger(docente.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(coordinador_academico.class.getName()).log(Level.SEVERE, null, ex);
          }
     
     try {
         conexion = DriverManager.getConnection(url,usuario,password);
         statement = conexion.createStatement();
-        statement.executeUpdate("UPDATE docente SET NOMBRE = 'Aurora' WHERE ID='45454545' ");
-        rs = statement.executeQuery("SELECT * FROM docente");
+        statement.executeUpdate("DELETE FROM coordinador_academico WHERE ID = '123456789' ");
+        rs = statement.executeQuery("SELECT * FROM coordinador_academico");
         rs.next();
         do {
                System.out.println(rs.getInt("ID")+" : "+rs.getString("NOMBRE"));
         }while (rs.next());
         
         } catch (SQLException ex) {
-         Logger.getLogger(docente.class.getName()).log(Level.SEVERE, null, ex);
+         Logger.getLogger(coordinador_academico.class.getName()).log(Level.SEVERE, null, ex);
          }
     }
     

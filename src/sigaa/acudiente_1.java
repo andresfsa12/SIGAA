@@ -27,7 +27,7 @@ public class acudiente_1 {
         conexion = DriverManager.getConnection(url,usuario,password);
         statement = conexion.createStatement();
         statement.executeUpdate("INSERT INTO acudiente (ID, NOMBRE, APELLIDO, N_CELULAR, DIRECCION)  VALUES ('22222', 'Bibiana', 'Vargas', '318888888', 'Cra 51 20 15') ");
-        rs = statement.executeQuery("SELECT * FROM acudiente");
+        rs = statement.executeQuery("SELECT * FROM acudiente"); 
         rs.next();
         do {
                System.out.println(rs.getInt("ID")+" : "+rs.getString("NOMBRE"));
